@@ -12,7 +12,7 @@
 ### Routes
    - cd /etc/default/
    - cd /etc/dhcp/
-   Realizar la configuracion en las rutas anteriores...
+   Perform the configuration in the previous routes...
    ```bash
     service isc-dhcp-server restart
    ```
@@ -27,7 +27,7 @@ sudo apt install openssh-server
 * Default port: 22
 ### Routes
    - cd /etc/ssh/
-   Realizar la configuracion en las rutas anteriores...
+   Perform the configuration in the previous routes...
    ```bash
   sudo systemctl start ssh
    ```
@@ -45,7 +45,7 @@ sudo apt-get install vsftpd
   sudo gedit /etc/vsftpd.conf
    ```
    - cd /etc
-   Realizar la configuracion en las rutas anteriores...
+   Perform the configuration in the previous routes...
    ```bash
 	sudo init.d/vsftpd restart
    ```

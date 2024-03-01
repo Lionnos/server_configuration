@@ -61,13 +61,13 @@ sudo apt-get install vsftpd
 * Default port:  /etc/apache2/ports.conf
 ### Routes and configuration
    ```bash
-	  sudo systemctl start server
+	  sudo systemctl start apache2
    ```
    ```bash
-	  sudo systemctl status server
+	  sudo systemctl status apache2
    ```
    ```bash
-	  sudo systemctl stop server
+	  sudo systemctl stop apache2
    ```
 ### Permissions
    * Routes htmls: cd /var/www/html/

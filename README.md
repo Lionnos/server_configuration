@@ -8,13 +8,14 @@
 ```bash
    sudo apt install isc-dhcp-server
 ```
-* Default port: 67
 ### Routes
+* Default port: 67
    - cd /etc/default/
    - cd /etc/dhcp/
    Perform the configuration in the previous routes...
+   - File configuration: "dhcpd.conf"
    ```bash
-    service isc-dhcp-server restart
+    service isc-dhcp-server restart 
    ```
    ```bash
     service isc-dhcp-server status
@@ -24,10 +25,11 @@
 ```bash
 sudo apt install openssh-server
 ```
-* Default port: 22
 ### Routes
+* Default port: 22
    - cd /etc/ssh/
    Perform the configuration in the previous routes...
+  - Port change: file "sshd_config"
    ```bash
   sudo systemctl start ssh
    ```
@@ -39,27 +41,53 @@ sudo apt install openssh-server
 ```bash
 sudo apt-get install vsftpd
 ```
-* Default port: 21
 ### Routes
-   ```bash
-  sudo gedit /etc/vsftpd.conf
-   ```
-   - cd /etc
+* Default port: 21
    Perform the configuration in the previous routes...
+   - Port change: /etc/vsftpd.conf -> listen_port=21
    ```bash
-	sudo init.d/vsftpd restart
+   sudo gedit /etc/vsftpd.conf
+   ```
+   Init, restart, status...
+   ```bash
+   sudo init.d/vsftpd restart
    ```
    ```bash
-  sudo init.d/vsftpd start
+   sudo init.d/vsftpd start
    ```
-
 
 ## APACHE2
 ```bash
    sudo apt install apache2
 ```
-* Default port:  /etc/apache2/ports.conf
-### Routes and configuration
+* Default port: Listen 80
+* Port change: /etc/apache2/ports.conf
+### Port configuration and reboot
+   ```bash
+   sudo gedit /etc/apache2/ports.conf
+   ```
+   Create or modify an Apache VirtualHost :
+   ```bash
+   sudo gedit /etc/apache2/sites-enabled
+   ```
+   Change the port of your preference
+   File: "000-default.conf" or other files "example.conf"
+   
+   Allow Apache to bind to the new port
+   ```bash
+   sudo systemctl restart apache2
+   ```
+   ```bash
+   sudo netstat -tlpn| grep apache
+   ```
+   ```bash
+   sudo ss -tlpn| grep apache
+   ```
+   Now, to check that the connection is correct, we will access it from a browser using the following syntax:
+   ```bash
+   http://Direccion_IP:8081
+   ```
+### Configuration and status
    ```bash
 	  sudo systemctl start apache2
    ```

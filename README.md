@@ -20,6 +20,7 @@
    ```bash
     service isc-dhcp-server status
    ```
+  https://infotips.es/redes/servidor-dhcp-en-ubuntu-server-22-04-lts/
 
 ## SSH
 ```bash

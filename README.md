@@ -113,3 +113,28 @@ sudo apt-get install vsftpd
    ```bash
 	  sudo chmod 664 /var/www/html/index.html
    ```
+
+## Cration and deletion of users
+```bash
+sudo su
+```
+    
+Create new user with "name-user"
+```bash
+adduser name-user
+```
+    
+Give administrator permissions
+```bash
+adduser name-user sudo
+```
+    
+SSH permisions with an IP
+```bash
+ ssh name-user@0.0.0.0
+```
+    
+Delete user
+```bash
+ sudo userdel -r name-user
+```
